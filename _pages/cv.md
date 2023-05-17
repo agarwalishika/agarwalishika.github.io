@@ -10,9 +10,12 @@ redirect_from:
 {% include base_path %}
 
 
+<embed src="files/ishikaagarwal.pdf" type="application/pdf">
+
+<!--
 <embed src="http://agarwalishika.github.io/files/ishikaagarwal.pdf" type="application/pdf">
 
-<!--Education
+Education
 ======
 * MS, University of Illinois, Urbana-Champaign, August 2022 - Present
 * BS, Purdue University, July 2019 - May 2022
