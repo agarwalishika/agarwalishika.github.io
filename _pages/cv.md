@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-![Resume](http://agarwalishika.github.io/files/ishikaagarwal.pdf)
+[Resume](http://agarwalishika.github.io/files/ishikaagarwal.pdf)
 
 <!--
 <embed src="http://agarwalishika.github.io/files/ishikaagarwal.pdf" type="application/pdf">
