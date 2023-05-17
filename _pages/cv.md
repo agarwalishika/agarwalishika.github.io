@@ -10,12 +10,7 @@ redirect_from:
 {% include base_path %}
 
 
-
-<object data="http://agarwalishika.github.io/files/ishikaagarwal.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="http://agarwalishika.github.io/files/ishikaagarwal.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://agarwalishika.github.io/files/ishikaagarwal.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<embed src="http://agarwalishika.github.io/files/ishikaagarwal.pdf" type="application/pdf">
 
 <!--Education
 ======
