@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Ishika Agarwal"
+title: "Hello there!"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello there! I am a 2nd year Master's student at University of Illinois, advised by [Dr. Hanghang Tong](http://tonghanghang.org/).
+I am a 2nd year Master's student at University of Illinois, advised by [Dr. Hanghang Tong](http://tonghanghang.org/).
 
 Following are some of my interests:
 - Deep Learning
