@@ -8,4 +8,10 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am a 2nd year Master's student at University of Illinois, advised by [Dr. Hanghang Tong](http://tonghanghang.org/).
+Hello there! I am a 2nd year Master's student at University of Illinois, advised by [Dr. Hanghang Tong](http://tonghanghang.org/).
+
+Following are some of my interests:
+- Deep Learning
+- Active Learning
+- Reinforcement Learning
+- Graph Machine Learning
