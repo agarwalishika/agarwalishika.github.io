@@ -83,11 +83,10 @@ author:
   name             : "Ishika Agarwal"
   avatar           : "profile.png"
   bio              : "Will code for dark chocolate"
-  location         : "Location"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=UQSG7u0AAAAJ&hl=en"
-  email            :
+  email            : [First Name][Last Name Initial][Two]@illinois.edu
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -109,7 +108,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : 
+  twitter          : https://twitter.com/wonderingishika
   vine             :
   weibo            :
   xing             :
