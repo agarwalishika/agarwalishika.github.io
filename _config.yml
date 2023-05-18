@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Ishika"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Ishika"
 description              : &description "personal description"
