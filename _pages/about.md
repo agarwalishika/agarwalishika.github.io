@@ -8,10 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a 2nd year Master's student at University of Illinois, advised by [Dr. Hanghang Tong](http://tonghanghang.org/).
+I am an incoming PhD student at University of Illinois, Urbana-Champaign. I'm currently working with [Dr. Dilek Hakkani-Tur](https://cs.illinois.edu/about/people/faculty/dilek) and [Dr. Gokhan Tur](https://cs.illinois.edu/about/people/all-faculty/gokhan).
 
-Following are some of my interests:
-- Deep Learning
-- Active Learning
-- Reinforcement Learning
-- Graph Machine Learning
+Highlights:
+- Joining IBM Research as a Research Scientist Intern in Summer 2024
+- Graduated from MSCS at UIUC in May 2024 (advised by [Dr. Hanghang Tong](http://tonghanghang.org/)).
+- Graudated from BS CS at Purdue in May 2022.
