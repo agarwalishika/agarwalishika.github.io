@@ -12,5 +12,5 @@ I am an incoming PhD student at University of Illinois, Urbana-Champaign. I'm cu
 
 Highlights:
 - Joining IBM Research as a Research Scientist Intern in Summer 2024
-- Graduated from MSCS at UIUC in May 2024 (advised by [Dr. Hanghang Tong](http://tonghanghang.org/)).
-- Graudated from BS CS at Purdue in May 2022.
+- Graduated from MSCS at UIUC in May 2024 (advised by [Dr. Hanghang Tong](http://tonghanghang.org/))
+- Graudated from BS CS at Purdue in May 2022
