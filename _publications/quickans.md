@@ -1,6 +1,6 @@
 ---
 title: "QuickAns: A Virtual TA"
-collection: projects
+collection: publications
 permalink: /publications/quickans
 excerpt: 'QuickAns is a virtual teaching assistant designed to help course staff who use Campuswire as their Q&A platform. It reads Campuswire posts from digest emails, and sends a potential answer to the course staff. At this stage, the course staff can review the answer for any logistical issues, and answer a student’s question in a matter of minutes.'
 date: 2023-05-01
