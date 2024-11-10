@@ -1,13 +1,13 @@
 ---
-title: "[WIP] Optimal Data Selection of Instruction Tuning Data for Efficient Language Model Fine-Tuning"
+title: "DELIFT: Data Efficienct Language Model Fine-Tuning"
 collection: publications
-permalink: /publications/optimal_data_selection
+permalink: /publications/delift
 excerpt: ''
 date: 2024-08-09
-venue: ICLR
-paperurl: 'http://agarwalishika.github.io/files/wip_sorry.pdf'
+venue: arxiv
+paperurl: 'https://arxiv.org/abs/2411.04425'
 authors: 'Ishika Agarwal, Krishna Killamsetty, Lucian Popa, Marina Danilevsky'
 ---
-My internship work at IBM - stay tuned!
+Fine-tuning large language models (LLMs) is essential for enhancing their performance on specific tasks but is often resource-intensive due to redundant or uninformative data. To address this inefficiency, we introduce DELIFT (Data Efficient Language model Instruction Fine-Tuning), a novel algorithm that systematically optimizes data selection across the three key stages of fine-tuning: (1) instruction tuning, (2) task-specific fine-tuning (e.g., reasoning, question-answering), and (3) continual fine-tuning (e.g., incorporating new data versions). Unlike existing methods that focus on single-stage optimization or rely on computationally intensive gradient calculations, DELIFT operates efficiently across all stages. Central to our approach is a pairwise utility metric that quantifies how beneficial a data sample is for improving the model's responses to other samples, effectively measuring the informational value relative to the model's current capabilities. By leveraging different submodular functions applied to this metric, DELIFT selects diverse and optimal subsets that are useful across all stages of fine-tuning. Experiments across various tasks and model scales demonstrate that DELIFT can reduce the fine-tuning data size by up to 70% without compromising performance, offering significant computational savings and outperforming existing methods in both efficiency and efficacy.
 
-[Download paper here](http://agarwalishika.github.io/files/wip_sorry.pdf)
+[Download paper here](https://arxiv.org/abs/2411.04425)
