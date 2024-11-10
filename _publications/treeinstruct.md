@@ -4,7 +4,7 @@ collection: publications
 permalink: /publications/treeinstruct
 excerpt: ''
 date: 2024-06-15
-venue: arxiv
+venue: EMNLP
 paperurl: 'https://arxiv.org/abs/2406.11709'
 authors: 'Priyanka Kargupta*, Ishika Agarwal*, Dilek Hakkani-Tur, Jiawei Han'
 ---
