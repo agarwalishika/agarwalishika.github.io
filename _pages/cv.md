@@ -10,12 +10,9 @@ redirect_from:
 {% include base_path %}
 
 <!-- [Resume](http://agarwalishika.github.io/files/ishikaagarwal.pdf) -->
-<object class="pdf" 
-            data=
-"http://agarwalishika.github.io/files/ishikaagarwal.pdf"
-            width="800"
-            height="500">
-    </object>
+
+<object data="http://agarwalishika.github.io/files/ishikaagarwal.pdf" width="1000" height="1000" type='application/pdf'></object>
+<object data="C:\\Users\\ishik\\OneDrive\\code\\agarwalishika.github.io\\files\\ishikaagarwal.pdf" width="1000" height="1000" type='application/pdf'></object>
 
 <!--
 <embed src="http://agarwalishika.github.io/files/ishikaagarwal.pdf" type="application/pdf">
