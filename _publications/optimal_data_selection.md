@@ -3,8 +3,8 @@ title: "DELIFT: Data Efficienct Language Model Fine-Tuning"
 collection: publications
 permalink: /publications/delift
 excerpt: ''
-date: 2024-08-09
-venue: arxiv
+date: 2025-04-024
+venue: ICLR
 paperurl: 'https://arxiv.org/abs/2411.04425'
 authors: 'Ishika Agarwal, Krishna Killamsetty, Lucian Popa, Marina Danilevsky'
 ---
