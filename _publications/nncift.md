@@ -3,7 +3,7 @@ title: "Cheap Neural Networks for Learnable and Scalable Influence Estimation of
 collection: publications
 permalink: /publications/nncift
 excerpt: ''
-date: 2025-04-24
+date: 2025-07-27
 venue: arXiV
 paperurl: 'https://arxiv.org/abs/2502.09969'
 authors: 'Ishika Agarwal, Dilek Hakkani-Tür'
