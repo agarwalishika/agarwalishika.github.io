@@ -13,6 +13,7 @@ I am a PhD student at University of Illinois, Urbana-Champaign. I'm currently wo
 Research interests: Currently, I'm interested in **data efficiency in NLP** - from uncertainty estimation to active learning and subset/coreset selection. I've worked in LLM-based agents, reinforcement learning, and graph machine learning.
 
 Highlights:
+- I'm giving a talk at [MSLD](https://nlp.nd.edu/msld25/schedule.html) about [NN-CIFT](https://agarwalishika.github.io/projects/mlk)
 - [DELIFT](https://arxiv.org/abs/2411.04425) was accepted at ICLR 2025!
 - Went to NeurIPs 2024 to present [TreeInstruct](https://arxiv.org/abs/2406.11709) at the workshop for [Large Foundational Models for Educational Assessment](https://neurips2024edu.github.io/#paper)
 - Went to Miami to present [TreeInstruct](https://arxiv.org/abs/2406.11709)!
