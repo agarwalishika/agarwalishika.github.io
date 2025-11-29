@@ -1,10 +1,10 @@
 ---
-title: "Cheap Neural Networks for Learnable and Scalable Influence Estimation of Instruction Fine-Tuning Data"
+title: "Neural Networks for Learnable and Scalable Influence Estimation of Instruction Fine-Tuning Data"
 collection: publications
 permalink: /publications/nncift
 excerpt: ''
-date: 2025-07-27
-venue: arXiV
+date: 2025-12-03
+venue: NeurIPS
 paperurl: 'https://arxiv.org/abs/2502.09969'
 authors: 'Ishika Agarwal, Dilek Hakkani-Tür'
 ---
