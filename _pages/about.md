@@ -13,13 +13,13 @@ I am a PhD candidate at University of Illinois, Urbana-Champaign. I'm currently 
 Research interests: Currently, I'm interested in **data efficiency in NLP** - from uncertainty estimation to active learning and subset/coreset selection. I'm starting to broaden my interests in **data centric NLP**. I've worked in LLM-based agents, reinforcement learning, and graph machine learning. I've also been recently interested in multilinguality in LLMs.
 
 
-<span style="color:blue">I'll be at NeurIPS 2025 presenting NN-CIFT poster \#103 on Wednesday 3rd, Exhibit Hall C, D, E at 11am.</span>.
+<span style="color:#F58027">I'll be at NeurIPS 2025 presenting NN-CIFT poster \#103 on Wednesday 3rd, Exhibit Hall C, D, E at 11am.</span>.
 
 
 Highlights:
 - I was selected as a [Top Reviewer at NeurIPS 2025](https://x.com/wonderingishika/status/1994155766719365302?s=20).
-- [NN-CIFT](https://arxiv.org/abs/2502.09969) was accepted at NeurIPS 2025 :sailboat:
-- Passed my qualification exam :tada: I'm now a PhD *Candidate*
+- [NN-CIFT](https://arxiv.org/abs/2502.09969) was accepted at NeurIPS 2025 ⛵
+- Passed my qualification exam 🎉 I'm now a PhD *Candidate*
 - Interned at Amazon Prime Video in the Content Localization team.
 - I'm giving a talk at [MSLD](https://nlp.nd.edu/msld25/schedule.html) about [NN-CIFT](https://agarwalishika.github.io/projects/mlk)
 - [DELIFT](https://arxiv.org/abs/2411.04425) was accepted at ICLR 2025!
