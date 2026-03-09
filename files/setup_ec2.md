@@ -1,39 +1,36 @@
-# If you want an EBS
+# Create instance:
 
-[To mount EBS to this EC2 instance](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html):
-1. run this and find the volume at the bottom that says "disk" with no MOUNTPOINT, and that the same size as the one you requested:
-```
-lsblk
-```
 
-2. make sure this outputs "data"
-```
-sudo file -s /dev/VOLUME_STR
-```
 
-3. create the file system and mount it locally
-```
-sudo mkfs -t xfs /dev/VOLUME_STR
-sudo mkdir /ebs_mount
-sudo mount /dev/VOLUME_STR /ebs_mount
-sudo chown -R $USER:$USER /ebs_mount
-```
 
-4. verify your results:
+# Set up anaconda:
 ```
-lsblk
-```
-
-# But you might not need one, so follow this instead:
-## Set up anaconda:
-```
-sudo chown -R $USER:$USER /tmp
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-sudo bash ~/miniconda.sh -b -p /tmp/miniconda
-/tmp/miniconda/bin/conda init bash
+sudo bash ~/miniconda.sh -b -p ~/miniconda
+~/miniconda/bin/conda init bash
 ```
 
-Create env:
+Close the terminal and open a new one.
+
+Then,
+```
+wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda-repo-amzn2023-12-8-local-12.8.0_570.86.10-1.x86_64.rpm
+sudo rpm -i cuda-repo-amzn2023-12-8-local-12.8.0_570.86.10-1.x86_64.rpm
+sudo dnf clean all
+sudo dnf -y install cuda-toolkit-12-8
+echo "" >> ~/.bashrc
+echo "export CUDA_HOME="/usr/local/cuda-12.8/"" >> ~/.bashrc
+```
+
+Add these things to your `~/.bashrc` file:
+```
+export SERVER_IP="127.0.0.1" # or your services' IP addr
+alias py="python"
+```
+
+Also, sign into wandb.
+
+# Create env (note: flash-attn takes forever to build):
 
 ```
 tmux
@@ -41,11 +38,15 @@ tmux
 conda create -n verl python=3.10
 conda activate verl
 
-pip install verl --no-cache-dir
-pip install vllm --no-cache-dir
+pip install verl==0.6.0 --no-cache-dir
+pip install vllm==0.8.3 --no-cache-dir
+pip install flash-attn --no-build-isolation --no-cache-dir
+pip install uvloop==0.21.0
+pip install transformers==4.57.1
 ```
 
-Run:
+
+# Run:
 
 ```
 git clone -b ishika https://github.com/agarwalishika/grpo_synthesis
