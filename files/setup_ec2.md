@@ -38,11 +38,9 @@ tmux
 conda create -n verl python=3.10
 conda activate verl
 
-pip install verl==0.6.0 --no-cache-dir
-pip install vllm==0.8.3 --no-cache-dir
+pip install verl --no-cache-dir
+pip install vllm==0.12.0 --no-cache-dir
 pip install flash-attn --no-build-isolation --no-cache-dir
-pip install uvloop==0.21.0
-pip install transformers==4.57.1
 ```
 
 
@@ -50,4 +48,29 @@ pip install transformers==4.57.1
 
 ```
 git clone -b ishika https://github.com/agarwalishika/grpo_synthesis
+```
+
+# some small changes in files to make:
+1. in `/home/ec2-user/.conda/envs/verl/lib/python3.10/site-packages/verl/workers/rollout/vllm_rollout/vllm_async_server.py`, change line 198:
+
+```
+self.config.max_model_len = self.model_config.hf_config.max_position_embeddings
+```
+
+to: 
+```
+self.config.max_model_len = self.config.max_model_len
+```
+
+
+2. in `/home/ec2-user/.conda/envs/verl/lib/python3.10/site-packages/verl/experimental/agent_loop/agent_loop.py`, change line 515 from:
+
+```
+return await self._agent_loop_postprocess(output, **kwargs)
+```
+
+to:
+```
+kwargs.pop("output", None)
+return await self._agent_loop_postprocess(output, **kwargs)
 ```
