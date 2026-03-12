@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Guide</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #1a1a2e;
+    background: #fafafa;
+  }
+  h1 {
+    color: #16213e;
+    border-bottom: 2px solid #e94560;
+    padding-bottom: 0.4rem;
+    margin-top: 2.5rem;
+    font-size: 1.8rem;
+  }
+  h1:first-of-type { margin-top: 0; }
+  h2 {
+    color: #16213e;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+  }
+  pre {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  code {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  }
+  p code, li > code, li > p > code {
+    background: #e8e8f0;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+  ol, ul { padding-left: 1.5rem; }
+  ol > li, ul > li { margin-bottom: 0.75rem; }
+  ul li { list-style-type: disc; }
+  p { margin: 0.75rem 0; }
+  a { color: #0f3460; }
+</style>
+</head>
+<body>
+
+<h1>Set up the machine</h1>
+<p>Follow these steps after you've created your EC2 instance.</p>
+
+<h2>Set up anaconda:</h2>
+<pre><code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+sudo bash ~/miniconda.sh -b -p ~/miniconda
+~/miniconda/bin/conda init bash</code></pre>
+<p>Close the terminal and open a new one.</p>
+
+<h2>Set up the right cuda</h2>
+<p>Then,</p>
+<pre><code>wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda-repo-amzn2023-12-8-local-12.8.0_570.86.10-1.x86_64.rpm
+sudo rpm -i cuda-repo-amzn2023-12-8-local-12.8.0_570.86.10-1.x86_64.rpm
+sudo dnf clean all
+sudo dnf -y install cuda-toolkit-12-8
+echo "" &gt;&gt; ~/.bashrc
+echo "export CUDA_HOME=\"/usr/local/cuda-12.8/\"" &gt;&gt; ~/.bashrc</code></pre>
+
+<h2>Set up ~/.bashrc file</h2>
+<p>Add these things to your <code>~/.bashrc</code> file:</p>
+<pre><code>export SERVER_IP="127.0.0.1" # or your services' IP addr
+alias py="python"</code></pre>
+
+<h2>Create env (note: flash-attn takes forever to build):</h2>
+<pre><code>tmux
+
+conda create -n verl python=3.10
+conda activate verl
+
+pip install verl --no-cache-dir
+pip install sentence-transformers
+pip install vllm==0.12.0 --no-cache-dir
+pip install flash-attn --no-build-isolation --no-cache-dir</code></pre>
+
+<h2>Sign into wandb</h2>
+<p>Also, sign into wandb.</p>
+<pre><code>wandb login</code></pre>
+
+<h2>Clone the code:</h2>
+<pre><code>git clone -b ishika https://github.com/agarwalishika/grpo_synthesis</code></pre>
+
+<h2>Some small changes in files to make:</h2>
+<ol>
+  <li>
+    <p>In <code>/home/ec2-user/.conda/envs/verl/lib/python3.10/site-packages/verl/workers/rollout/vllm_rollout/vllm_async_server.py</code>, change line 198:</p>
+    <pre><code>self.config.max_model_len = self.model_config.hf_config.max_position_embeddings</code></pre>
+    <p>to:</p>
+    <pre><code>self.config.max_model_len = self.config.max_model_len</code></pre>
+  </li>
+  <li>
+    <p>In <code>/home/ec2-user/.conda/envs/verl/lib/python3.10/site-packages/verl/experimental/agent_loop/agent_loop.py</code>, to line 515:</p>
+    <pre><code>return await self._agent_loop_postprocess(output, **kwargs)</code></pre>
+    <p>Add the following line above it (kwargs):</p>
+    <pre><code>kwargs.pop("output", None)
+return await self._agent_loop_postprocess(output, **kwargs)</code></pre>
+  </li>
+</ol>
+
+<h1>To run GRPO</h1>
+<ol>
+  <li>
+    <p>Run a reward function (as a service): run any of the files in <code>services/</code></p>
+    <ul>
+      <li>Examples for commands are in <code>run_services.sh</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Run <code>run_verl.sh</code>. It takes 4 arguments (examples are in <code>run_experiments.sh</code>):</p>
+    <ul>
+      <li>the model name</li>
+      <li>the path of the reward function</li>
+      <li>the job name</li>
+      <li>the message you want to send to yourself to indicate it is done (see step 3 below)</li>
+    </ul>
+  </li>
+  <li>
+    <p>[Optional] If you'd like to attach a Slack webhook to send you a message when the training job is done, follow these instructions: <a href="https://www.svix.com/resources/guides/how-to-get-slack-webhook-url/">https://www.svix.com/resources/guides/how-to-get-slack-webhook-url/</a></p>
+    <ul>
+      <li>Add your webhook link to the bottom of the <code>curl</code> command in <code>run_verl.sh</code></li>
+    </ul>
+  </li>
+</ol>
+
+</body>
+</html>
