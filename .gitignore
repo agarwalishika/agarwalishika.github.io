@@ -1,2 +1,4 @@
 _site/
 auth.txt
+vendor/
+.bundle/

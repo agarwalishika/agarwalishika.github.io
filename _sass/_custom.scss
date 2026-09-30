@@ -4,10 +4,15 @@
    ========================================================================== */
 
 :root {
-  --accent:        #d9480f;
-  --accent-bright: #f76707;
-  --accent-soft:   #fff4e6;
-  --accent-line:   #ffd8a8;
+  --accent:        #fb923c;
+  --accent-bright: #f2780a;
+  --accent-soft:   #ffedd8;
+  --accent-line:   #ffc98c;
+
+  --pink:          #ff8fa3;
+  --pink-bright:   #ff6f89;
+  --pink-soft:     #ffe4e9;
+  --pink-line:     #ffd6de;
 
   --ink:      #1f1d1b;
   --ink-mid:  #55504b;
@@ -207,12 +212,17 @@ h1, h2, h3, h4 {
 
 /* --- statement callout ---------------------------------------------------- */
 
+.statements {
+  margin: 0 0 4rem;
+
+  > * + * { margin-top: 1rem; }
+}
+
 .statement {
   border-left: 3px solid var(--accent-bright);
   background: var(--accent-soft);
   border-radius: 0 10px 10px 0;
   padding: 1.5rem 1.75rem;
-  margin: 0 0 4rem;
 
   p {
     margin: 0 0 0.85rem;
@@ -222,6 +232,24 @@ h1, h2, h3, h4 {
   }
 
   p:last-child { margin-bottom: 0; }
+  strong { color: var(--ink); }
+}
+
+.statement--pink {
+  border-left: 3px solid var(--pink);
+  background: var(--pink-soft);
+  border-radius: 0 10px 10px 0;
+  padding: 1.5rem 1.75rem;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--ink-mid);
+  }
+
+  a { color: var(--pink-bright); }
+  a:hover { color: var(--pink); }
   strong { color: var(--ink); }
 }
 

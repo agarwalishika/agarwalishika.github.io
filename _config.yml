@@ -8,6 +8,7 @@
 # Site Settings
 locale                   : "en-US"
 title                    : "Ishika Agarwal"
+masthead_title           : "Hello There!"
 title_separator          : "-"
 name                     : &name "Ishika Agarwal"
 description              : &description "PhD candidate at UIUC working on autonomous data curation for language models."

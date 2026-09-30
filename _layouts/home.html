@@ -8,7 +8,7 @@ layout: default
 
   <header class="hero">
     <div class="hero__text">
-      <p class="hero__eyebrow">{{ page.eyebrow }}</p>
+      {% if page.eyebrow %}<p class="hero__eyebrow">{{ page.eyebrow }}</p>{% endif %}
       <h1 class="hero__name">{{ site.author.name }}</h1>
       {% if page.thesis %}<p class="hero__thesis">{{ page.thesis }}</p>{% endif %}
       <p class="hero__role">{{ page.role | markdownify | remove: "<p>" | remove: "</p>" }}</p>
@@ -40,8 +40,16 @@ layout: default
          alt="{{ site.author.name }}">
   </header>
 
-  <div class="statement">
-    {{ content }}
+  <div class="statements">
+    <div class="statement">
+      {{ content }}
+    </div>
+
+    {% if page.travel %}
+      <div class="statement--pink">
+        <p>{{ page.travel | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+      </div>
+    {% endif %}
   </div>
 
   {% assign selected = site.publications | where_exp: "p", "p.selected" | sort: "date" | reverse %}
