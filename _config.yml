@@ -7,13 +7,14 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Ishika Agarwal"
 title_separator          : "-"
-name                     : &name "Ishika"
-description              : &description "personal description"
+name                     : &name "Ishika Agarwal"
+description              : &description "PhD candidate at UIUC working on autonomous data curation for language models."
 url                      : https://agarwalishika.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "agarwalishika/agarwalishika.github.io"
+cv_url                   : "/files/ishikaagarwal.pdf"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -57,7 +58,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &twitter "wonderingishika"
 facebook:
   username               :
   app_id                 :
@@ -82,7 +83,7 @@ analytics:
 author:
   name             : "Ishika Agarwal"
   avatar           : "profile.png"
-  bio              : "Will code for dark chocolate"
+  bio              : "PhD candidate at UIUC. Will code for dark chocolate."
   location         :
   employer         :
   pubmed           : 
@@ -175,16 +176,10 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
   projects:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -212,15 +207,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
   # _publications
   - scope:
       path: ""
@@ -228,8 +214,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
+      share: false
+      comments: false
   # _projects
   - scope:
       path: ""
@@ -237,17 +223,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
+      share: false
+      comments: false
   # _talks
   - scope:
       path: ""
@@ -255,7 +232,7 @@ defaults:
     values:
       layout: talk
       author_profile: true
-      share: true
+      share: false
 
 # Sass/SCSS
 sass:

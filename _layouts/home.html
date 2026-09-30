@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<div class="home">
+
+  <header class="hero">
+    <div class="hero__text">
+      <p class="hero__eyebrow">{{ page.eyebrow }}</p>
+      <h1 class="hero__name">{{ site.author.name }}</h1>
+      {% if page.thesis %}<p class="hero__thesis">{{ page.thesis }}</p>{% endif %}
+      <p class="hero__role">{{ page.role | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+
+      <ul class="linkrow">
+        {% if site.author.email %}
+          <li><a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>
+        {% endif %}
+        {% if site.author.googlescholar %}
+          <li><a href="{{ site.author.googlescholar }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Scholar</a></li>
+        {% endif %}
+        {% if site.author.github %}
+          <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+        {% endif %}
+        {% if site.author.twitter %}
+          <li><a href="https://x.com/{{ site.author.twitter }}"><i class="fab fa-twitter" aria-hidden="true"></i> X</a></li>
+        {% endif %}
+        {% if site.author.linkedin %}
+          <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        {% endif %}
+        {% if site.cv_url %}
+          <li><a href="{{ site.cv_url }}"><i class="fas fa-file-lines" aria-hidden="true"></i> CV</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <img class="hero__portrait"
+         src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}"
+         alt="{{ site.author.name }}">
+  </header>
+
+  <div class="statement">
+    {{ content }}
+  </div>
+
+  {% assign selected = site.publications | where_exp: "p", "p.selected" | sort: "date" | reverse %}
+  {% if selected.size > 0 %}
+    <section class="section">
+      <div class="section__head">
+        <h2 class="section__title">Selected work</h2>
+        <a class="section__more" href="{{ base_path }}/publications/">All publications &rarr;</a>
+      </div>
+      <div class="pubs">
+        {% for post in selected %}
+          {% include pub-card.html %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if site.data.news.size > 0 %}
+    <section class="section">
+      <div class="section__head">
+        <h2 class="section__title">News</h2>
+      </div>
+      <ul class="news">
+        {% for item in site.data.news limit: 8 %}
+          <li>
+            <span class="news__date">{{ item.date }}</span>
+            <span class="news__text">{{ item.text | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+</div>

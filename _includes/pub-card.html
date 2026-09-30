@@ -1,0 +1,32 @@
+{% include base_path %}
+{% comment %}
+  Renders one publication / project as a row.
+  Expects `post`. Bolds "Ishika Agarwal" in the author list.
+{% endcomment %}
+
+<div class="pub">
+  <div class="pub__venue">
+    {{ post.venue_short | default: post.venue }}
+    <span class="pub__year">{{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+  </div>
+
+  <div class="pub__body">
+    <h3 class="pub__title">
+      <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+    </h3>
+
+    {% if post.authors %}
+      <p class="pub__authors">
+        {{ post.authors | replace: "Ishika Agarwal", '<span class="me">Ishika Agarwal</span>' }}
+      </p>
+    {% endif %}
+
+    {% if post.links %}
+      <ul class="pub__links">
+        {% for link in post.links %}
+          <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>

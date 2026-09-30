@@ -2,36 +2,35 @@
 layout: archive
 title: "Sitemap"
 permalink: /sitemap/
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
 
-A list of all the posts and pages found on the site. For you robots out there is an [XML version]({{ base_path }}/sitemap.xml) available for digesting as well.
+<p class="page__lead">
+  Everything on this site. There's an <a href="{{ base_path }}/sitemap.xml">XML version</a> for robots.
+</p>
 
-<h2>Pages</h2>
-{% for post in site.pages %}
-  {% include archive-single.html %}
-{% endfor %}
-
-<h2>Posts</h2>
-{% for post in site.posts %}
-  {% include archive-single.html %}
-{% endfor %}
-
-{% capture written_label %}'None'{% endcapture %}
+<div class="yeargroup">
+  <h2 class="yeargroup__label">Pages</h2>
+  <ul>
+    {% for p in site.pages %}
+      {% if p.title and p.permalink %}
+        <li><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
 
 {% for collection in site.collections %}
-{% unless collection.output == false or collection.label == "posts" %}
-  {% capture label %}{{ collection.label }}{% endcapture %}
-  {% if label != written_label %}
-  <h2>{{ label }}</h2>
-  {% capture written_label %}{{ label }}{% endcapture %}
+  {% if collection.output != false and collection.docs.size > 0 %}
+    <div class="yeargroup">
+      <h2 class="yeargroup__label">{{ collection.label | capitalize }}</h2>
+      <ul>
+        {% for doc in collection.docs %}
+          <li><a href="{{ base_path }}{{ doc.url }}">{{ doc.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
   {% endif %}
-{% endunless %}
-{% for post in collection.docs %}
-  {% unless collection.output == false or collection.label == "posts" %}
-  {% include archive-single.html %}
-  {% endunless %}
-{% endfor %}
 {% endfor %}

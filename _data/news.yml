@@ -1,0 +1,39 @@
+# Newest first. `date` is free text (shown as-is), `text` supports markdown links.
+- date: "Aug 2026"
+  text: "New preprint: [LLMs Get Smarter from Targeted Synthetic Multilingual Data](https://arxiv.org/abs/2608.15964), from my time at Amazon."
+
+- date: "May 2026"
+  text: "New preprint: [AcquisitionSynthesis](https://arxiv.org/abs/2605.13149) — using acquisition functions as reward models for synthetic data generation."
+
+- date: "Jan 2026"
+  text: "New preprint: [A Rising Tide Lifts All Boats](https://arxiv.org/abs/2601.06307) — MTQE rewards for idiom translation."
+
+- date: "Dec 2025"
+  text: "Selected as a [Top Reviewer at NeurIPS 2025](https://x.com/wonderingishika/status/1994155766719365302?s=20)."
+
+- date: "Nov 2025"
+  text: "Passed my PhD qualification exam! 🎉"
+
+- date: "Sep 2025"
+  text: "[NN-CIFT](https://arxiv.org/abs/2502.09969) was accepted at NeurIPS 2025 ⛵"
+
+- date: "Summer 2025"
+  text: "Interned at Amazon Prime Video on the Content Localization team."
+
+- date: "Apr 2025"
+  text: "Gave a [talk at Midwest Speech and Language Days](https://youtu.be/0Y4VYfY6puU) on data valuation with neural networks (NN-CIFT)."
+
+- date: "Jan 2025"
+  text: "[DELIFT](https://arxiv.org/abs/2411.04425) was accepted at ICLR 2025!"
+
+- date: "Dec 2024"
+  text: "Presented [TreeInstruct](https://arxiv.org/abs/2406.11709) at the NeurIPS 2024 workshop on [Large Foundation Models for Educational Assessment](https://neurips2024edu.github.io/#paper)."
+
+- date: "Nov 2024"
+  text: "Went to Miami to present [TreeInstruct](https://arxiv.org/abs/2406.11709) at EMNLP 2024."
+
+- date: "Summer 2024"
+  text: "Interned at IBM Research as a Research Scientist Intern."
+
+- date: "May 2024"
+  text: "Graduated with an MSCS from UIUC, advised by [Dr. Hanghang Tong](http://tonghanghang.org/)."
