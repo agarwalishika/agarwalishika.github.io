@@ -50,6 +50,12 @@ layout: default
         <p>{{ page.travel | markdownify | remove: "<p>" | remove: "</p>" }}</p>
       </div>
     {% endif %}
+
+    {% if page.internship %}
+      <div class="statement--teal">
+        <p>{{ page.internship | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+      </div>
+    {% endif %}
   </div>
 
   {% assign selected = site.publications | where_exp: "p", "p.selected" | sort: "date" | reverse %}

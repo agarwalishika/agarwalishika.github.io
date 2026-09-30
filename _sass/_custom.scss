@@ -14,6 +14,11 @@
   --pink-soft:     #ffe4e9;
   --pink-line:     #ffd6de;
 
+  --teal:          #03fcbe;
+  --teal-bright:   #039c78;
+  --teal-soft:     #dbfff2;
+  --teal-line:     #94ffdf;
+
   --ink:      #1f1d1b;
   --ink-mid:  #55504b;
   --ink-soft: #7c756d;
@@ -250,6 +255,24 @@ h1, h2, h3, h4 {
 
   a { color: var(--pink-bright); }
   a:hover { color: var(--pink); }
+  strong { color: var(--ink); }
+}
+
+.statement--teal {
+  border-left: 3px solid var(--teal);
+  background: var(--teal-soft);
+  border-radius: 0 10px 10px 0;
+  padding: 1.5rem 1.75rem;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--ink-mid);
+  }
+
+  a { color: var(--teal-bright); }
+  a:hover { color: var(--teal); }
   strong { color: var(--ink); }
 }
 
