@@ -1,15 +1,19 @@
 # Newest first. `date` is free text (shown as-is), `text` supports markdown links.
+- date: "Oct 2026"
+  text: "Tutorial accepted to AAAI'27: [The Moving Target of Data Curation](https://movingtargetdata.github.io)!"
+
 - date: "Aug 2026"
-  text: "New preprint: [LLMs Get Smarter from Targeted Synthetic Multilingual Data](https://arxiv.org/abs/2608.15964), from my time at Amazon."
+  text: "New preprint: [LLMs Get Smarter from Targeted Synthetic Multilingual Data](https://arxiv.org/abs/2608.15964), from my time at Uniphore."
 
 - date: "Summer 2026"
   text: "Interned at Uniphore as a Research Scientist Intern."
 
+- date: "Sept 2026"
+  text: "[A Rising Tide Lifts All Boats](https://arxiv.org/abs/2601.06307) accepted to EMNLP2026! <img class=\"emoji\" src=\"https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f1ed-1f1fa.svg\" alt=\"🇭🇺\">"
+
 - date: "May 2026"
   text: "New preprint: [AcquisitionSynthesis](https://arxiv.org/abs/2605.13149) — using acquisition functions as reward models for synthetic data generation."
 
-- date: "Jan 2026"
-  text: "New preprint: [A Rising Tide Lifts All Boats](https://arxiv.org/abs/2601.06307) — MTQE rewards for idiom translation."
 
 - date: "Dec 2025"
   text: "Selected as a [Top Reviewer at NeurIPS 2025](https://x.com/wonderingishika/status/1994155766719365302?s=20)."

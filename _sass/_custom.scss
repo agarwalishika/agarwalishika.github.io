@@ -75,8 +75,8 @@ h1, h2, h3, h4 {
 /* --- masthead ------------------------------------------------------------- */
 
 .masthead {
-  border-bottom: 1px solid var(--rule);
-  background: var(--paper);
+  border-bottom: 0;
+  background: var(--deep-plum);
 }
 
 .masthead__inner-wrap {
@@ -88,22 +88,36 @@ h1, h2, h3, h4 {
   background: transparent;
 
   a {
-    color: var(--ink-mid);
+    color: var(--cream);
     font-size: 0.85em;
     font-weight: 500;
     letter-spacing: 0.01em;
   }
 
-  a:hover { color: var(--accent); }
+  a:hover { color: var(--peach); }
 
   .visible-links a:before { background: var(--peach); height: 2px; }
 
   .masthead__menu-item--lg a {
-    color: var(--ink);
+    color: var(--cream);
     font-weight: 700;
   }
 
-  button { background: var(--accent); }
+  button { background: var(--plum-mid); }
+
+  // overflow dropdown on narrow screens: match the band
+  .hidden-links {
+    background: var(--deep-plum);
+    border-color: var(--deep-plum);
+
+    &:before,
+    &:after { border-color: var(--deep-plum) transparent; }
+
+    a:hover {
+      color: var(--peach);
+      background: var(--plum);
+    }
+  }
 }
 
 /* --- page shell ----------------------------------------------------------- */
@@ -468,6 +482,15 @@ h1, h2, h3, h4 {
 }
 
 .news li:last-child { border-bottom: 0; }
+
+// inline emoji image (for flags, which Windows can't render as text)
+.news img.emoji {
+  display: inline;
+  height: 1em;
+  width: auto;
+  vertical-align: -0.1em;
+  margin: 0;
+}
 
 .news__date {
   font-size: 0.78rem;
