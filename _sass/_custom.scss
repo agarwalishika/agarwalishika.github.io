@@ -1,29 +1,50 @@
 /* ==========================================================================
-   Custom theme — warm / orange
+   Custom theme — brand palette (see ishika-brand-style.md)
    Loaded last so it overrides Minimal Mistakes defaults.
    ========================================================================== */
 
 :root {
-  --accent:        #fb923c;
-  --accent-bright: #f2780a;
-  --accent-soft:   #ffedd8;
-  --accent-line:   #ffc98c;
+  /* brand palette */
+  --deep-plum:   #4E2F45;
+  --cream:       #FFF1DE;
+  --plum:        #5A3550;
+  --cocoa:       #6F4A2E;
+  --peach:       #F79A6B;
+  --mauve:       #CB6B86;
+  --plum-mid:    #9A5378;
+  --light-peach: #FCA476;
+  --tangerine:   #FF8A5B;
+  --rose:        #D98383;
+  --blush:       #F6B9B3;
+  --sage:        #CBD18A;
+  --card-tint:   #FCE3D6;
+  --hairline:    #E9C2AC;
 
-  --pink:          #ff8fa3;
-  --pink-bright:   #ff6f89;
-  --pink-soft:     #ffe4e9;
-  --pink-line:     #ffd6de;
+  --sunset: linear-gradient(90deg, var(--light-peach), var(--tangerine),
+                            var(--mauve), var(--plum-mid), var(--rose));
 
-  --teal:          #03fcbe;
-  --teal-bright:   #039c78;
-  --teal-soft:     #dbfff2;
-  --teal-line:     #94ffdf;
+  /* semantic roles */
+  --accent:        var(--plum-mid);   /* links, labels */
+  --accent-bright: var(--plum);       /* link hover */
+  --accent-soft:   var(--card-tint);  /* card backgrounds */
+  --accent-line:   var(--peach);      /* rules, underlines, highlights */
 
-  --ink:      #1f1d1b;
-  --ink-mid:  #55504b;
-  --ink-soft: #7c756d;
-  --rule:     #eae5df;
-  --paper:    #fffdfb;
+  --pink:          var(--mauve);
+  --pink-bright:   var(--plum-mid);
+  --pink-soft:     #FBE4E1;           /* blush on cream */
+  --pink-line:     var(--blush);
+
+  --teal:          var(--sage);
+  --teal-bright:   var(--plum-mid);
+  --teal-soft:     #F8F2D8;           /* sage on cream */
+  --teal-line:     var(--sage);
+
+  --ink:      var(--plum);
+  --ink-mid:  var(--cocoa);
+  --ink-soft: #8C6A55;                /* cocoa, lightened */
+  --rule:     var(--hairline);
+  --paper:    var(--cream);
+  --surface:  #FFF8EF;                /* chips and embeds on cream */
 
   --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
@@ -75,7 +96,7 @@ h1, h2, h3, h4 {
 
   a:hover { color: var(--accent); }
 
-  .visible-links a:before { background: var(--accent-bright); height: 2px; }
+  .visible-links a:before { background: var(--peach); height: 2px; }
 
   .masthead__menu-item--lg a {
     color: var(--ink);
@@ -93,23 +114,34 @@ h1, h2, h3, h4 {
   padding-right: 1.25em;
 }
 
+/* dark closing band with the sunset motif along its top edge */
 .page__footer {
-  background: #faf6f2;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
+  background: var(--deep-plum);
+  border-top: 0;
+  color: var(--blush);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--sunset);
+  }
 
   footer { max-width: var(--wrap); }
-  a { color: var(--ink-mid); }
-  a:hover { color: var(--accent); }
+  a { color: var(--cream); }
+  a:hover { color: var(--peach); }
 }
 
 .page__footer-follow .social-icons .fa,
-.page__footer-follow .social-icons .fab { color: var(--accent); }
+.page__footer-follow .social-icons .fab { color: var(--peach); }
 
 .footer__credit {
   font-size: 0.8rem;
   margin: 0.3rem 0 0;
-  color: var(--ink-soft);
+  color: var(--blush);
 }
 
 /* ==========================================================================
@@ -204,7 +236,7 @@ h1, h2, h3, h4 {
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--ink-mid);
-  background: #fff;
+  background: var(--surface);
   text-decoration: none;
   transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
 }
@@ -224,7 +256,7 @@ h1, h2, h3, h4 {
 }
 
 .statement {
-  border-left: 3px solid var(--accent-bright);
+  border-left: 3px solid var(--peach);
   background: var(--accent-soft);
   border-radius: 0 10px 10px 0;
   padding: 1.5rem 1.75rem;
@@ -390,7 +422,7 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--ink-mid);
-  background: #fff;
+  background: var(--surface);
   text-decoration: none;
   transition: all 0.15s ease;
 }
@@ -398,7 +430,7 @@ h1, h2, h3, h4 {
 .pub__links a:hover {
   border-color: var(--accent-bright);
   background: var(--accent-bright);
-  color: #fff;
+  color: var(--cream);
 }
 
 /* --- year groups (publications page) -------------------------------------- */
@@ -432,7 +464,7 @@ h1, h2, h3, h4 {
   font-size: 0.92rem;
   line-height: 1.6;
   color: var(--ink-mid);
-  border-bottom: 1px solid #f3efea;
+  border-bottom: 1px solid var(--rule);
 }
 
 .news li:last-child { border-bottom: 0; }
@@ -557,7 +589,7 @@ h1, h2, h3, h4 {
   border: 1px solid var(--rule);
   border-radius: 10px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface);
 
   object {
     display: block;
