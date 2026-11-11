@@ -10,4 +10,4 @@ redirect_from:
   - /about.html
 ---
 
-I work on **data curation for LLMs**: selecting or generating informative data. I also have a side interest in **multilinguality**: why don't models know the same information across all languages and how can we avoid that?
+I work on **data curation for LLMs**: selecting or generating informative data. I also have a side interest in **multilinguality**: why don't models know the same information across all languages?

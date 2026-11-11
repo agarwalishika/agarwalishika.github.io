@@ -41,12 +41,12 @@ layout: default
   </header>
 
   <div class="statements">
-    <div class="statement">
+    <div class="statement--plain">
       {{ content }}
     </div>
 
     {% if page.travel %}
-      <div class="statement--plain">
+      <div class="statement--pink">
         <p>{{ page.travel | markdownify | remove: "<p>" | remove: "</p>" }}</p>
       </div>
     {% endif %}
